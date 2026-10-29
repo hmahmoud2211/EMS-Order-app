@@ -1,0 +1,74 @@
+from enum import StrEnum
+
+
+class UserRole(StrEnum):
+    ADMIN = "ADMIN"
+    EMPLOYEE = "EMPLOYEE"
+
+
+class SessionStatus(StrEnum):
+    DRAFT = "DRAFT"
+    OPEN = "OPEN"
+    CLOSED = "CLOSED"
+    FINALIZED = "FINALIZED"
+    CANCELLED = "CANCELLED"
+
+
+class OrderStatus(StrEnum):
+    SUBMITTED = "SUBMITTED"
+    CANCELLED = "CANCELLED"
+
+
+class FeeAllocation(StrEnum):
+    NONE = "NONE"
+    EQUAL = "EQUAL"
+    PROPORTIONAL = "PROPORTIONAL"
+
+
+class RestaurantSource(StrEnum):
+    MANUAL = "MANUAL"
+    FILE_IMPORT = "FILE_IMPORT"
+    TALABAT = "TALABAT"
+
+
+class ImportSourceType(StrEnum):
+    PDF = "PDF"
+    IMAGE = "IMAGE"
+    CSV = "CSV"
+    XLSX = "XLSX"
+
+
+class ImportStatus(StrEnum):
+    PROCESSING = "PROCESSING"
+    NEEDS_REVIEW = "NEEDS_REVIEW"
+    APPROVED = "APPROVED"
+    REJECTED = "REJECTED"
+    FAILED = "FAILED"
+
+
+class RevisionAction(StrEnum):
+    CREATED = "CREATED"
+    UPDATED = "UPDATED"
+    CANCELLED = "CANCELLED"
+    ADMIN_CREATED = "ADMIN_CREATED"
+    ADMIN_MODIFIED = "ADMIN_MODIFIED"
+    ADMIN_CANCELLED = "ADMIN_CANCELLED"
+    SESSION_CANCELLED = "SESSION_CANCELLED"
+
+
+class NotificationType(StrEnum):
+    RESTAURANT_SELECTED = "RESTAURANT_SELECTED"
+    ORDERING_OPENED = "ORDERING_OPENED"
+    DEADLINE_APPROACHING = "DEADLINE_APPROACHING"
+    ORDER_SUBMITTED = "ORDER_SUBMITTED"
+    ORDER_MODIFIED = "ORDER_MODIFIED"
+    ORDER_CANCELLED = "ORDER_CANCELLED"
+    SESSION_CLOSED = "SESSION_CLOSED"
+    SESSION_FINALIZED = "SESSION_FINALIZED"
+    SESSION_CANCELLED = "SESSION_CANCELLED"
+    PASSWORD_RESET_REQUESTED = "PASSWORD_RESET_REQUESTED"
+    GENERAL = "GENERAL"
+
+
+def enum_values(enum_cls: type[StrEnum]) -> str:
+    return ", ".join(f"'{member.value}'" for member in enum_cls)

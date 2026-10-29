@@ -1,0 +1,6 @@
+category,name,description,price,sizes,extras,available
+Burgers,Chicken Burger,"Crispy chicken breast, lettuce, house sauce",180,Regular:0|Large:+35,Cheese:20|Sauce:10,yes
+Burgers,Classic Beef Burger,"Grilled beef patty, pickles, onions",210,Single:0|Double:+70,Cheese:20|Bacon:30,yes
+Pasta,Chicken Pasta,"Penne, grilled chicken, creamy white sauce",185,,Parmesan:15,yes
+Sides,French Fries,Golden fries with sea salt,60,Regular:0|Large:+20,,yes
+Drinks,Cola,330 ml can,35,,,yes
