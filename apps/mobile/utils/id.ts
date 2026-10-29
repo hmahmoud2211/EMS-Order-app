@@ -12,7 +12,11 @@ export function randomId(): string {
 }
 
 export function initials(name: string): string {
-  const parts = name.trim().split(/\s+/).filter(Boolean);
+  // Only words that start with a letter count ("EMS Admin (Demo)" → "EA").
+  const parts = name
+    .trim()
+    .split(/\s+/)
+    .filter((part) => /^\p{L}/u.test(part));
   if (parts.length === 0) return '?';
   const first = parts[0][0] ?? '';
   const last = parts.length > 1 ? parts[parts.length - 1][0] : '';

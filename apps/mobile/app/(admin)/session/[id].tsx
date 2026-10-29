@@ -9,6 +9,7 @@ import {
   RefreshCw,
   Save,
   StopCircle,
+  UtensilsCrossed,
 } from 'lucide-react-native';
 import { useState } from 'react';
 import { View } from 'react-native';
@@ -203,6 +204,12 @@ export default function ManageSessionScreen() {
           icon={ClipboardList}
           variant="secondary"
           onPress={() => router.push({ pathname: '/consolidated/[sessionId]', params: { sessionId: session.id } })}
+        />
+        <Button
+          label={t('restaurants.menu')}
+          icon={UtensilsCrossed}
+          variant="outline"
+          onPress={() => router.push({ pathname: '/restaurant/[id]', params: { id: session.restaurant_id } })}
         />
       </View>
 
